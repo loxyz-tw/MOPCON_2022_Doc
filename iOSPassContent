@@ -1,0 +1,35 @@
+// iOS Pass content for php file : 
+
+'eventTicket' => [
+        'primaryFields' => [
+            [
+                'key' => 'ticket',
+                'label' => '票種',
+                'value' => '一般會眾',
+            ],
+        ],
+        'secondaryFields' => [
+            [
+                'key' => '場次',
+                'label' => '日期',
+                'value' => '2021/12/31',
+            ],
+        ],
+        'backFields' => [
+            [
+                'key' => 'name',
+                'label' => 'Visiter',
+                'value' => 'Roy',
+            ],
+        ],
+        'transitType' => 'PKTransitTypeAir',
+    ],
+    'barcode' => [
+        'format' => 'PKBarcodeFormatQR',
+        'message' => 'https://mopcon.org/2021/',
+        'messageEncoding' => 'iso-8859-1',
+    ],
+    'backgroundColor' => 'rgb(32,110,247)',
+    'logoText' => 'MOPCON 2021',
+	  'location' => ['longitude' => '121.533012', 'latitude' => '25.042385'],
+    'relevantDate' => 
