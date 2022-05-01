@@ -1,87 +1,3 @@
-/******************************
- *
- *  Define an EventTicket Class
- *
- *  See https://developers.google.com/pay/passes/reference/v1/eventticketclass
- *
- * @param String $classId - The unique identifier for a class
- * @return Google_Service_Walletobjects_EventTicketClass $payload - object representing EventTicketClass resource
- *
- *******************************/
-public static function makeEventTicketClassResource($classId) {
-    // Define the resource representation of the Class
-    // values should be from your DB/services; here we hardcode information
-    // below defines an eventticket class. For more properties, check:
-    //// https://developers.google.com/pay/passes/reference/v1/eventticketclass/insert
-    //// https://developers.google.com/pay/passes/guides/pass-verticals/event-tickets/design
-
-    // There is a client lib to help make the data structure. Newest client is on devsite:
-    //// https://developers.google.com/pay/passes/support/libraries#libraries
-    $localEventName = new Google_Service_Walletobjects_LocalizedString();
-    $localEventNameTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localEventNameTranslated->setLanguage( "en-US");
-    $localEventNameTranslated->setValue("Bacon Coffee Fun Event");
-    $localEventName->setDefaultValue($localEventNameTranslated);
-
-    $location = new Google_Service_Walletobjects_LatLongPoint();
-    $location->setLatitude(37.424015499999996);
-    $location->setLongitude(-122.09259560000001);
-    $locations = array($location);
-
-    $logoUri = new Google_Service_Walletobjects_ImageUri();
-    $logoUri->setUri("https://farm8.staticflickr.com/7340/11177041185_a61a7f2139_o.jpg");
-    $logoUri->setDescription("Baconrista stadium logo");
-    $logoImage = new Google_Service_Walletobjects_Image();
-    $logoImage->setSourceUri($logoUri);
-
-    $localVenueName = new Google_Service_Walletobjects_LocalizedString();
-    $localVenueNameTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localVenueNameTranslated->setLanguage( "en-US");
-    $localVenueNameTranslated->setValue("Baconrista Stadium");
-    $localVenueName->setDefaultValue($localVenueNameTranslated);
-    $localVenueAddress = new Google_Service_Walletobjects_LocalizedString();
-    $localVenueAddressTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localVenueAddressTranslated->setLanguage( "en-US");
-    $localVenueAddressTranslated->setValue("101 Baconrista Dr.");
-    $localVenueAddress->setDefaultValue($localVenueAddressTranslated);
-    $localEventVenue = new Google_Service_Walletobjects_EventVenue();
-    $localEventVenue->setName($localVenueName);
-    $localEventVenue->setAddress($localVenueAddress);
-
-    $eventDateTime = new Google_Service_Walletobjects_EventDateTime();
-    $eventDateTime->setStart("2023-04-12T11:20:50.52Z");
-    $eventDateTime->setEnd("2023-04-12T16:20:50.52Z");
-
-    $textModulesData = new Google_Service_Walletobjects_TextModuleData();
-    $textModulesData->setBody("Baconrista events have pushed the limits since its founding.");
-    $textModulesData->setHeader("Custom Details");
-    $textModulesDatas = array($textModulesData);
-
-    $locationUri = new Google_Service_Walletobjects_Uri();
-    $locationUri->setUri("http://maps.google.com/");
-    $locationUri->setDescription("Nearby Locations");
-    $telephoneUri = new Google_Service_Walletobjects_Uri();
-    $telephoneUri->setUri("tel:6505555555");
-    $telephoneUri->setDescription("Call Customer Service");
-    $linksModuleData = new Google_Service_Walletobjects_LinksModuleData();
-    $linksModuleData->setUris($locationUri, $telephoneUri);
-
-    $payload = new Google_Service_Walletobjects_EventTicketClass();
-    //required properties
-        $payload->setId($classId);
-        $payload->setIssuerName("Baconrista Stadium");
-        $payload->setReviewStatus("underReview");
-    $payload->setEventName($localEventName);
-        // optional.  Check design and reference api to decide what's desirable
-    $payload->setLocations($locations);
-    $payload->setLogo($logoImage);
-    $payload->setVenue($localEventVenue);
-    $payload->setDateTime($eventDateTime);
-    $payload->setTextModulesData($textModulesDatas);
-    $payload->setLinksModuleData($linksModuleData);
-
-    return $payload;
-}
 
 /******************************
    *
@@ -106,47 +22,79 @@ public static function makeEventTicketObjectResource($classId, $objectId) {
     // Define Barcode
     $barcode = new Google_Service_Walletobjects_Barcode();
     $barcode->setType("qrCode");
-    $barcode->setValue("1234abc");
-    $barcode->setAlternateText("optional alternate text");
+    $barcode->setValue("1234abc"); // qrcode 編號
 
-    $localSeatValue = new Google_Service_Walletobjects_LocalizedString();
-    $localSeatValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localSeatValueTranslated->setLanguage( "en-US");
-    $localSeatValueTranslated->setValue("42");
-    $localSeatValue->setDefaultValue($localSeatValueTranslated);
-    $localRowValue = new Google_Service_Walletobjects_LocalizedString();
-    $localRowValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localRowValueTranslated->setLanguage( "en-US");
-    $localRowValueTranslated->setValue("G3");
-    $localRowValue->setDefaultValue($localRowValueTranslated);
-    $localSectionValue = new Google_Service_Walletobjects_LocalizedString();
-    $localSectionValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localSectionValueTranslated->setLanguage( "en-US");
-    $localSectionValueTranslated->setValue("G3");
-    $localSectionValue->setDefaultValue($localSectionValueTranslated);
-    $localGateValue = new Google_Service_Walletobjects_LocalizedString();
-    $localGateValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $localGateValueTranslated->setLanguage( "en-US");
-    $localGateValueTranslated->setValue("A");
-    $localGateValue->setDefaultValue($localGateValueTranslated);
-    $eventSeat = new Google_Service_Walletobjects_EventSeat();
-    $eventSeat->setSeat($localSeatValue);
-    $eventSeat->setRow($localRowValue);
-    $eventSeat->setSection($localSectionValue);
-    $eventSeat->setGate($localGateValue);
+    // $localSectionValue = new Google_Service_Walletobjects_LocalizedString();
+    // $localSectionValueTranslated = new Google_Service_Walletobjects_TranslatedString();
+    // $localSectionValueTranslated->setLanguage( "en-US");
+    // $localSectionValueTranslated->setValue("G3");
+    // $localSectionValue->setDefaultValue($localSectionValueTranslated);
+    // $localGateValue = new Google_Service_Walletobjects_LocalizedString();
+    // $localGateValueTranslated = new Google_Service_Walletobjects_TranslatedString();
+    // $localGateValueTranslated->setLanguage( "en-US");
+    // $localGateValueTranslated->setValue("A");
+    // $localGateValue->setDefaultValue($localGateValueTranslated);
+  
+    $ticketType = new Google_Service_Walletobjects_LocalizedString();
+    $ticketTypeValueTranslated = new Google_Service_Walletobjects_TranslatedString();
+    $ticketTypeValueTranslated->setLanguage( "zh-TW");
+    $ticketTypeValueTranslated->setValue("一般會眾");
+    $ticketType->setDefaultValue($ticketTypeValueTranslated);
 
+    $locationPoint = new Google_Service_Walletobjects_LatLongPoint();
+    $locationPoint->setLatitude(22.626600);
+    $locationPoint->setLongitude(120.285988);
+
+    $appLink = new Google_Service_Walletobjects_AppLinkData();
+    $appLinkInfo = new Google_Service_Walletobjects_AppLinkInfo();
+
+    $appImage = new Google_Service_Walletobjects_Image();
+    $appImageUri = new Google_Service_Walletobjects_ImageUri();
+    $appImageUri->setUri('https://play-lh.googleusercontent.com/pfhnA3cO81kTHj-i0eTr4nrMctF0R0jFX3_EXyCrNI6UuHDqBmp_xJEZi5PLVByuUdk2=w480-h960');
+    $appImage->setSourceUri($appImageUri);
+    $appContent = new Google_Service_Walletobjects_LocalizedString();
+    $appContentTranslated = new Google_Service_Walletobjects_TranslatedString();
+    $appContentTranslated->setLanguage( "zh-TW");
+    $appContentTranslated->setValue("MOPCON App Icon");
+    $appContent->setDefaultValue($appContentTranslated);
+    $appImage->setContentDescription($appContent);
+    $appLink->setAppLogoImage($appImage);
+    $appTitle = new Google_Service_Walletobjects_LocalizedString();
+    $appTitleTranslated = new Google_Service_Walletobjects_TranslatedString();
+    $appTitleTranslated->setLanguage( "zh-TW");
+    $appTitleTranslated->setValue("MOPCON Android App");
+    $appTitle->setDefaultValue($appTitleTranslated)
+    $appLink->setTitle($appTitle);
+    $appDescription = new Google_Service_Walletobjects_LocalizedString();
+    $appDescriptionTranslated = new Google_Service_Walletobjects_TranslatedString();
+    $appDescriptionTranslated->setLanguage( "zh-TW");
+    $appDescriptionTranslated->setValue("MOPCON Android App 立馬下載！");
+    $appDescription->setDefaultValue($appDescriptionTranslated)
+    $appLink->setDescription($appDescription);
+    $appTarget = new Google_Service_Walletobjects_AppTarget();
+    $appUri = new Google_Service_Walletobjects_Uri();
+    $appUri->setUri('https://play.google.com/store/apps/details?id=org.mopcon.session.app');
+    $appUri->setDescription('Download on Google Play Store');
+    $appTarget->setTargetUri($appUri);
+    $appLinkInfo->setAppTarget($appTarget);
+    $appLink->setAndroidAppLindInfo($appLinkInfo);
 
     // Define eventticket object
     $payload = new Google_Service_Walletobjects_EventTicketObject();
-      // required fields
-      $payload->setClassId($classId);
-      $payload->setId($objectId);
-      $payload->setState("active");
-      // optional.  Check design and reference api to decide what's desirable
+    // required fields
+    $payload->setClassId($classId);
+    $payload->setId($objectId);
+    $payload->setState("active");
+    // optional.  Check design and reference api to decide what's desirable
     $payload->setBarcode($barcode);
-    $payload->setSeatInfo($eventSeat);
-    $payload->setTicketHolderName("Sir Bacon IV");
-    $payload->setTicketNumber("123abc");
+    $payload->setTicketHolderName("王大明");
+    $payload->setTicketNumber("123abc");//訂單編號
+    $payload->setTicketType($ticketType);
+    $payload->setId("123abc");//訂單編號
+    $payload->setHexBackgroundColor('#206ff7');
+    $payload->setLocations([$locationPoint]);
+    $payload->setAppLinkData($appLink);
+
 
     return $payload;
 }

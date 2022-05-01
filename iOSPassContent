@@ -1,35 +1,105 @@
-// iOS Pass content for php file : 
+// iOS Pass content for php file :
 
+'organizationName' => 'Mobile Open Platform Conference',
+'description' => 'MOPCON 2022 門票',
+'serialNumber' => ''
+'teamIdentifier' => '',
+'passTypeIdentifier' => '',
+'associatedStoreIdentifiers' => 'app store id'
+'formatVersion' => 1,
+'backgroundColor' => 'rgb(32,110,247)',
+'logoText' => 'MOPCON 2022',
+'locations' => [
+    [
+        'longitude' => '120.285988', 
+        'latitude' => '22.626600',
+        'relevantText' => '大勇路與中正四路口，鄰近捷運鹽埕埔站2號出口'
+    ],
+],
+'maxDistance' => 300,
 'eventTicket' => [
-        'primaryFields' => [
-            [
-                'key' => 'ticket',
-                'label' => '票種',
-                'value' => '一般會眾',
-            ],
+    'primaryFields' => [
+        [
+            'key' => 'attendee',
+            'label' => '參加者',
+            'value' => '王大明',
         ],
-        'secondaryFields' => [
-            [
-                'key' => '場次',
-                'label' => '日期',
-                'value' => '2021/12/31',
-            ],
+        [
+            'key' => 'ticket',
+            'label' => '票種',
+            'value' => '一般會眾',
         ],
-        'backFields' => [
-            [
-                'key' => 'name',
-                'label' => 'Visiter',
-                'value' => 'Roy',
-            ],
-        ],
-        'transitType' => 'PKTransitTypeAir',
     ],
-    'barcode' => [
-        'format' => 'PKBarcodeFormatQR',
-        'message' => 'https://mopcon.org/2021/',
-        'messageEncoding' => 'iso-8859-1',
+    'secondaryFields' => [
+        [
+            'key' => 'date',
+            'label' => '日期',
+            'value' => '2022/10/15 - 2022/10/16',
+        ],
+        [
+            'key' => 'place',
+            'label' => '地點',
+            'value' => '高雄國際會議中心 ICCK',
+        ],
     ],
-    'backgroundColor' => 'rgb(32,110,247)',
-    'logoText' => 'MOPCON 2021',
-	  'location' => ['longitude' => '121.533012', 'latitude' => '25.042385'],
-    'relevantDate' => 
+    'backFields' => [  
+        [
+            'key' => 'event',
+            'label' => '活動名稱',
+            'value' => 'Mobile Open Platform Conference 2022',
+        ], 
+        [
+            'key' => 'attendee',
+            'label' => '參加者',
+            'value' => '王大明',
+        ],
+        [
+            'key' => 'ticket',
+            'label' => '票種',
+            'value' => '一般會眾',
+        ],
+        [
+            'key' => 'place',
+            'label' => '會場名稱',
+            'value' => '高雄國際會議中心 ICCK',
+        ],
+        [
+            'key' => 'address',
+            'label' => '會場地址',
+            'attributedValue' => "<a href='https://goo.gl/maps/23KHRzGwxnLk1bDX9'>高雄市鹽埕區中正四路274號</a>",
+        ],
+        [
+            'key' => 'startDate',
+            'label' => '活動開始時間',
+            'value' => '2022/10/15 09:00',
+        ], 
+        [
+            'key' => 'endDate',
+            'label' => '活動結束時間',
+            'value' => '2022/10/16 18:00',
+        ],      
+        [
+            'key' => 'website',
+            'label' => '官方網站',
+            'attributedValue' => "<a href='https://mopcon.org'>https://mopcon.org</a>",
+        ],
+        [
+            'key' => 'order',
+            'label' => '訂單編號',
+            'value' => '#126808463',
+        ],
+    ],
+],
+'barcode' => [
+    'format' => 'PKBarcodeFormatQR',
+    'message' => '1234567890abcdefghijk',
+    'messageEncoding' => 'iso-8859-1',
+],
+'calendarEvent' => [
+    'title' => 'MOPCON 2022',
+    'location' => '高雄國際會議中心',
+    'startDate' => '2022-10-15T09:00+08:00',
+    'endDate' => '2022-10-16T18:00+08:00'
+],
+'relevantDate' => '2022-10-15T08:30+08:00'
+'expirationDate' => '2022-10-16T18:00+08:00'
