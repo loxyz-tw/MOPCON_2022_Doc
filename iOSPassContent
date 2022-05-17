@@ -1,7 +1,7 @@
 // iOS Pass content for php file :
 
 'organizationName' => 'Mobile Open Platform Conference',
-'description' => 'MOPCON 2022 門票',
+'description' => 'ticket_title',
 'serialNumber' => ''
 'teamIdentifier' => '',
 'passTypeIdentifier' => '',
@@ -13,7 +13,7 @@
     [
         'longitude' => '120.285988', 
         'latitude' => '22.626600',
-        'relevantText' => '大勇路與中正四路口，鄰近捷運鹽埕埔站2號出口'
+        'relevantText' => 'location_title'
     ],
 ],
 'maxDistance' => 300,
@@ -21,71 +21,69 @@
     'primaryFields' => [
         [
             'key' => 'attendee',
-            'label' => '參加者',
+            'label' => 'attendee_title',
             'value' => '王大明',
         ],
         [
             'key' => 'ticket',
-            'label' => '票種',
-            'value' => '一般會眾',
+            'label' => 'ticket_type_title',
+            'value' => 'ticket_type_normal',
         ],
-    ],
-    'secondaryFields' => [
         [
             'key' => 'date',
-            'label' => '日期',
+            'label' => 'date_title',
             'value' => '2022/10/15 - 2022/10/16',
         ],
         [
             'key' => 'place',
-            'label' => '地點',
-            'value' => '高雄國際會議中心 ICCK',
+            'label' => 'place_title',
+            'value' => 'place_name',
         ],
     ],
     'backFields' => [  
         [
             'key' => 'event',
-            'label' => '活動名稱',
+            'label' => 'event_title',
             'value' => 'Mobile Open Platform Conference 2022',
         ], 
         [
             'key' => 'attendee',
-            'label' => '參加者',
+            'label' => 'attendee_title',
             'value' => '王大明',
         ],
         [
             'key' => 'ticket',
-            'label' => '票種',
-            'value' => '一般會眾',
+            'label' => 'ticket_type_title',
+            'value' => 'ticket_type_normal',
         ],
         [
             'key' => 'place',
-            'label' => '會場名稱',
-            'value' => '高雄國際會議中心 ICCK',
+            'label' => 'place_title',
+            'value' => 'place_name',
         ],
         [
             'key' => 'address',
-            'label' => '會場地址',
-            'attributedValue' => "<a href='https://goo.gl/maps/23KHRzGwxnLk1bDX9'>高雄市鹽埕區中正四路274號</a>",
+            'label' => 'address_title',
+            'attributedValue' => "<a href='https://goo.gl/maps/23KHRzGwxnLk1bDX9'>address_description</a>",
         ],
         [
             'key' => 'startDate',
-            'label' => '活動開始時間',
+            'label' => 'event_start_date',
             'value' => '2022/10/15 09:00',
         ], 
         [
             'key' => 'endDate',
-            'label' => '活動結束時間',
+            'label' => 'event_end_date',
             'value' => '2022/10/16 18:00',
         ],      
         [
             'key' => 'website',
-            'label' => '官方網站',
+            'label' => 'official_site',
             'attributedValue' => "<a href='https://mopcon.org'>https://mopcon.org</a>",
         ],
         [
             'key' => 'order',
-            'label' => '訂單編號',
+            'label' => 'order_id',
             'value' => '#126808463',
         ],
     ],
@@ -97,7 +95,7 @@
 ],
 'calendarEvent' => [
     'title' => 'MOPCON 2022',
-    'location' => '高雄國際會議中心',
+    'location' => 'place_name',
     'startDate' => '2022-10-15T09:00+08:00',
     'endDate' => '2022-10-16T18:00+08:00'
 ],
