@@ -2,12 +2,14 @@
 
 'organizationName' => 'Mobile Open Platform Conference',
 'description' => 'ticket_title',
-'serialNumber' => ''
+'serialNumber' => '',
 'teamIdentifier' => '',
 'passTypeIdentifier' => '',
 'associatedStoreIdentifiers' => 'app store id'
 'formatVersion' => 1,
-'backgroundColor' => 'rgb(32,110,247)',
+'backgroundColor' => 'rgb(0,19,51)',
+'labelColor' => 'rgb(244, 244, 244)',
+'foregroundColor' => 'rgb(255, 255, 255)',
 'logoText' => 'MOPCON 2022',
 'locations' => [
     [
@@ -17,8 +19,16 @@
     ],
 ],
 'maxDistance' => 300,
-'eventTicket' => [
+'eventTicket' => [  
     'primaryFields' => [
+        [
+            'key' => 'title',
+            'label' => 'event_title'
+            'value' => 'Mobile Open Platform Conference 2022',
+        ],        
+        
+    ],
+    'secondaryFields' => [
         [
             'key' => 'attendee',
             'label' => 'attendee_title',
@@ -29,6 +39,8 @@
             'label' => 'ticket_type_title',
             'value' => 'ticket_type_normal',
         ],
+    ],
+    'auxiliaryFields' => [
         [
             'key' => 'date',
             'label' => 'date_title',
@@ -64,7 +76,7 @@
         [
             'key' => 'address',
             'label' => 'address_title',
-            'attributedValue' => "<a href='https://goo.gl/maps/23KHRzGwxnLk1bDX9'>address_description</a>",
+            'attributedValue' => "address_description",
         ],
         [
             'key' => 'startDate',
@@ -93,11 +105,5 @@
     'message' => '1234567890abcdefghijk',
     'messageEncoding' => 'iso-8859-1',
 ],
-'calendarEvent' => [
-    'title' => 'MOPCON 2022',
-    'location' => 'place_name',
-    'startDate' => '2022-10-15T09:00+08:00',
-    'endDate' => '2022-10-16T18:00+08:00'
-],
-'relevantDate' => '2022-10-15T08:30+08:00'
+'relevantDate' => '2022-10-15T08:30+08:00',
 'expirationDate' => '2022-10-16T18:00+08:00'
