@@ -7,8 +7,8 @@
 'passTypeIdentifier' => '',
 'associatedStoreIdentifiers' => 'app store id',
 'formatVersion' => 1,
-'backgroundColor' => 'rgb(0,19,51)',
-'labelColor' => 'rgb(244, 244, 244)',
+'backgroundColor' => 'rgb(15,20,29)',
+'labelColor' => 'rgb(0, 0, 0)',
 'foregroundColor' => 'rgb(255, 255, 255)',
 'logoText' => 'MOPCON 2022',
 'locations' => [
@@ -38,6 +38,7 @@
             'key' => 'ticket',
             'label' => 'ticket_type_title',
             'value' => 'ticket_type_normal',
+            'textAlignment' : 'PKTextAlignmentRight',
         ],
     ],
     'auxiliaryFields' => [
