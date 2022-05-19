@@ -5,7 +5,7 @@
 'serialNumber' => '',
 'teamIdentifier' => '',
 'passTypeIdentifier' => '',
-'associatedStoreIdentifiers' => 'app store id'
+'associatedStoreIdentifiers' => 'app store id',
 'formatVersion' => 1,
 'backgroundColor' => 'rgb(0,19,51)',
 'labelColor' => 'rgb(244, 244, 244)',
@@ -13,8 +13,8 @@
 'logoText' => 'MOPCON 2022',
 'locations' => [
     [
-        'longitude' => '120.285988', 
-        'latitude' => '22.626600',
+        'longitude' => 120.285988, 
+        'latitude' => 22.626600,
         'relevantText' => 'location_title'
     ],
 ],
@@ -23,7 +23,7 @@
     'primaryFields' => [
         [
             'key' => 'title',
-            'label' => 'event_title'
+            'label' => 'event_title',
             'value' => 'Mobile Open Platform Conference 2022',
         ],        
         
