@@ -10,7 +10,7 @@
 "place_name" = "International Convention Center Kaohsiung";
 "event_title" = "Event";
 "address_title" = "Address";
-"address_description" = "<a href='https://goo.gl/maps/23KHRzGwxnLk1bDX9'>No.274, Zhongzheng 4th Rd., Yancheng Dist., Kaohsiung City 80347,Taiwan (R.O.C.)</a>";
+"address_description" = "No. 274 Zhongzheng 4th Road Yancheng District, Kaohsiung City 80347 Taiwan";
 "event_start_date" = "Start Date";
 "event_end_date" = "End Date";
 "official_site" = "Official Site";
