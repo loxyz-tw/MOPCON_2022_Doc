@@ -42,15 +42,16 @@
     ],
     'auxiliaryFields' => [
         [
-            'key' => 'date',
-            'label' => 'date_title',
-            'value' => '2022/10/15 - 2022/10/16',
-        ],
-        [
             'key' => 'place',
             'label' => 'place_title',
             'value' => 'place_name',
         ],
+        [
+            'key' => 'date',
+            'label' => 'date_title',
+            'value' => '2022/10/15 - 2022/10/16',
+            'textAlignment' : 'PKTextAlignmentRight',
+        ],        
     ],
     'backFields' => [  
         [
