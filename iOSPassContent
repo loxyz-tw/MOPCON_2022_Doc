@@ -20,11 +20,11 @@
 ],
 'maxDistance' => 300,
 'eventTicket' => [  
-    'headerFields' => [
+    'headerFields' => [[
             'key' => 'dateRange',
             'label' => 'city_title',
             'value' => 'date_range',
-        ],
+        ]],
     'primaryFields' => [
         [
             'key' => 'title',
