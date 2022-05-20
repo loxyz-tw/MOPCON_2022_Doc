@@ -10,7 +10,7 @@
 "place_name" = "高雄國際會議中心 ICCK";
 "event_title" = "活動名稱";
 "address_title" = "會場地址";
-"address_description" = "80347台灣高雄市鹽埕區中正四路274號";
+"address_description" = "<a href='https://maps.apple.com/?address=80347%E5%8F%B0%E7%81%A3%E9%AB%98%E9%9B%84%E5%B8%82%E9%B9%BD%E5%9F%95%E5%8D%80%E4%B8%AD%E6%AD%A3%E5%9B%9B%E8%B7%AF274%E8%99%9F&auid=13202732981341919156&ll=22.626693,120.285997&lsp=9902&q=%E9%AB%98%E9%9B%84%E5%9C%8B%E9%9A%9B%E6%9C%83%E8%AD%B0%E4%B8%AD%E5%BF%83&_ext=CioKBAgEEEkKBAgFEAMKBAgGEG0KBAgKEAAKBAhSEAMKBAhVEA8KBAhZEAISJinRJdLOHJ82QDH3eHiDEBJeQDnN0B2HaaE2QEHReTb3rxJeQFAE&t=m'>80347台灣高雄市鹽埕區中正四路274號</a>";
 "event_start_date" = "活動開始時間";
 "event_end_date" = "活動結束時間";
 "official_site" = "官方網站";
