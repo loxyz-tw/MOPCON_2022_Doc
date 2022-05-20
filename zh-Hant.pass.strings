@@ -7,7 +7,7 @@
 "ticket_type_vip" = "VIP";
 "date_title" = "日期";
 "place_title" = "地點";
-"place_name" = "高雄國際會議中心 ICCK";
+"place_name" = "高雄國際會議中心";
 "event_title" = "活動名稱";
 "address_title" = "會場地址";
 "address_description" = "<a href='https://pse.is/478u5z'>80347台灣高雄市鹽埕區中正四路274號</a>";
@@ -16,4 +16,4 @@
 "official_site" = "官方網站";
 "order_id" = "訂單編號";
 "city_title" = "高雄";
-"date_range" = "10月15日 - 10月16日";
+"date_range" = "10/15 - 10/16";
