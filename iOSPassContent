@@ -38,7 +38,7 @@
             'key' => 'ticket',
             'label' => 'ticket_type_title',
             'value' => 'ticket_type_normal',
-            'textAlignment' : 'PKTextAlignmentRight',
+            'textAlignment' => 'PKTextAlignmentRight',
         ],
     ],
     'auxiliaryFields' => [
@@ -51,7 +51,7 @@
             'key' => 'date',
             'label' => 'date_title',
             'value' => '2022/10/15 - 2022/10/16',
-            'textAlignment' : 'PKTextAlignmentRight',
+            'textAlignment' => 'PKTextAlignmentRight',
         ],        
     ],
     'backFields' => [  
