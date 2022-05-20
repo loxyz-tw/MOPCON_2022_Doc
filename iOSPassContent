@@ -20,6 +20,11 @@
 ],
 'maxDistance' => 300,
 'eventTicket' => [  
+    'headerFields' => [
+            'key' => 'dateRange',
+            'label' => 'city_title',
+            'value' => 'date_range',
+        ],
     'primaryFields' => [
         [
             'key' => 'title',
@@ -93,7 +98,7 @@
         [
             'key' => 'website',
             'label' => 'official_site',
-            'attributedValue' => "https://mopcon.org",
+            'attributedValue' => '<a href="https://mopcon.org">https://mopcon.org</a>',
         ],
         [
             'key' => 'order',
