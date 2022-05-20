@@ -78,7 +78,7 @@
         [
             'key' => 'address',
             'label' => 'address_title',
-            'attributedValue' => "address_description",
+            'attributedValue' => 'address_description',
         ],
         [
             'key' => 'startDate',
