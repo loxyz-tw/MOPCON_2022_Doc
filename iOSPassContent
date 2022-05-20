@@ -93,12 +93,13 @@
         [
             'key' => 'website',
             'label' => 'official_site',
-            'attributedValue' => "<a href='https://mopcon.org'>https://mopcon.org</a>",
+            'attributedValue' => "https://mopcon.org",
         ],
         [
             'key' => 'order',
             'label' => 'order_id',
             'value' => '#126808463',
+            'dataDetectorTypes' => [],
         ],
     ],
 ],
