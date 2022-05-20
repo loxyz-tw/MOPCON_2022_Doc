@@ -104,7 +104,7 @@
             'key' => 'order',
             'label' => 'order_id',
             'value' => '#126808463',
-            'dataDetectorTypes' => [],
+            'dataDetectorTypes' => [PKDataDetectorTypeLink],
         ],
     ],
 ],
