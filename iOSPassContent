@@ -8,7 +8,7 @@
 'associatedStoreIdentifiers' => 'app store id',
 'formatVersion' => 1,
 'backgroundColor' => 'rgb(15,20,29)',
-'labelColor' => 'rgb(0, 0, 0)',
+'labelColor' => 'rgb(255, 255, 255)',
 'foregroundColor' => 'rgb(255, 255, 255)',
 'logoText' => 'MOPCON 2022',
 'locations' => [
