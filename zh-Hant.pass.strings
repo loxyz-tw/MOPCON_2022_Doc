@@ -10,7 +10,7 @@
 "place_name" = "高雄國際會議中心 ICCK";
 "event_title" = "活動名稱";
 "address_title" = "會場地址";
-"address_description" = "<a href='https://goo.gl/maps/F335pvJs4xKXo8nb8'>80347台灣高雄市鹽埕區中正四路274號</a>";
+"address_description" = "80347台灣高雄市鹽埕區中正四路274號";
 "event_start_date" = "活動開始時間";
 "event_end_date" = "活動結束時間";
 "official_site" = "官方網站";
