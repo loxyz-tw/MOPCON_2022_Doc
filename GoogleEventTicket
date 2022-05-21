@@ -21,80 +21,82 @@ public static function makeEventTicketObjectResource($classId, $objectId) {
     //// https://developers.google.com/pay/passes/support/libraries#libraries
     // Define Barcode
     $barcode = new Google_Service_Walletobjects_Barcode();
-    $barcode->setType("qrCode");
-    $barcode->setValue("1234abc"); // qrcode 編號
+	$barcode->setType("qrCode");
+	$barcode->setValue("1234abc"); // qrcode 編號
+	$barcode->setAlternateText("1234abc"); // qrcode 編號
 
-    // $localSectionValue = new Google_Service_Walletobjects_LocalizedString();
-    // $localSectionValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    // $localSectionValueTranslated->setLanguage( "en-US");
-    // $localSectionValueTranslated->setValue("G3");
-    // $localSectionValue->setDefaultValue($localSectionValueTranslated);
-    // $localGateValue = new Google_Service_Walletobjects_LocalizedString();
-    // $localGateValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    // $localGateValueTranslated->setLanguage( "en-US");
-    // $localGateValueTranslated->setValue("A");
-    // $localGateValue->setDefaultValue($localGateValueTranslated);
-  
-    $ticketType = new Google_Service_Walletobjects_LocalizedString();
-    $ticketTypeValueTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $ticketTypeValueTranslated->setLanguage( "zh-TW");
-    $ticketTypeValueTranslated->setValue("一般會眾");
-    $ticketType->setDefaultValue($ticketTypeValueTranslated);
+	// $localSectionValue = new Google_Service_Walletobjects_LocalizedString();
+	// $localSectionValueTranslated = new Google_Service_Walletobjects_TranslatedString();
+	// $localSectionValueTranslated->setLanguage( "en-US");
+	// $localSectionValueTranslated->setValue("G3");
+	// $localSectionValue->setDefaultValue($localSectionValueTranslated);
+	// $localGateValue = new Google_Service_Walletobjects_LocalizedString();
+	// $localGateValueTranslated = new Google_Service_Walletobjects_TranslatedString();
+	// $localGateValueTranslated->setLanguage( "en-US");
+	// $localGateValueTranslated->setValue("A");
+	// $localGateValue->setDefaultValue($localGateValueTranslated);
+	
+	$ticketType = new Google_Service_Walletobjects_LocalizedString();
+	$ticketTypeValueTranslated_TW = new Google_Service_Walletobjects_TranslatedString();
+	$ticketTypeValueTranslated_TW->setLanguage("zh-TW");
+	$ticketTypeValueTranslated_TW->setValue("一般會眾");
+	$ticketTypeValueTranslated_EN = new Google_Service_Walletobjects_TranslatedString();
+	$ticketTypeValueTranslated_EN->setLanguage("en-US");
+	$ticketTypeValueTranslated_EN->setValue("Normal");
+	$ticketType->setTranslatedValues([$ticketTypeValueTranslated_TW, $ticketTypeValueTranslated_EN]);
+	$ticketType->setDefaultValue($ticketTypeValueTranslated_EN);
 
-    $locationPoint = new Google_Service_Walletobjects_LatLongPoint();
-    $locationPoint->setLatitude(22.626600);
-    $locationPoint->setLongitude(120.285988);
+	$locationPoint = new Google_Service_Walletobjects_LatLongPoint();
+	$locationPoint->setLatitude(22.626600);
+	$locationPoint->setLongitude(120.285988);
 
-    $appLink = new Google_Service_Walletobjects_AppLinkData();
-    $appLinkInfo = new Google_Service_Walletobjects_AppLinkInfo();
+	// $appLinkInfo = new Google_Service_Walletobjects_AppLinkDataAppLinkInfo();
+	// $appLinkData = new Google_Service_Walletobjects_AppLinkData();
 
-    $appImage = new Google_Service_Walletobjects_Image();
-    $appImageUri = new Google_Service_Walletobjects_ImageUri();
-    $appImageUri->setUri('https://play-lh.googleusercontent.com/pfhnA3cO81kTHj-i0eTr4nrMctF0R0jFX3_EXyCrNI6UuHDqBmp_xJEZi5PLVByuUdk2=w480-h960');
-    $appImage->setSourceUri($appImageUri);
-    $appContent = new Google_Service_Walletobjects_LocalizedString();
-    $appContentTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $appContentTranslated->setLanguage( "zh-TW");
-    $appContentTranslated->setValue("MOPCON App Icon");
-    $appContent->setDefaultValue($appContentTranslated);
-    $appImage->setContentDescription($appContent);
-    $appLink->setAppLogoImage($appImage);
-    $appTitle = new Google_Service_Walletobjects_LocalizedString();
-    $appTitleTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $appTitleTranslated->setLanguage( "zh-TW");
-    $appTitleTranslated->setValue("MOPCON Android App");
-    $appTitle->setDefaultValue($appTitleTranslated)
-    $appLink->setTitle($appTitle);
-    $appDescription = new Google_Service_Walletobjects_LocalizedString();
-    $appDescriptionTranslated = new Google_Service_Walletobjects_TranslatedString();
-    $appDescriptionTranslated->setLanguage( "zh-TW");
-    $appDescriptionTranslated->setValue("MOPCON Android App 立馬下載！");
-    $appDescription->setDefaultValue($appDescriptionTranslated)
-    $appLink->setDescription($appDescription);
-    $appTarget = new Google_Service_Walletobjects_AppTarget();
-    $appUri = new Google_Service_Walletobjects_Uri();
-    $appUri->setUri('https://play.google.com/store/apps/details?id=org.mopcon.session.app');
-    $appUri->setDescription('Download on Google Play Store');
-    $appTarget->setTargetUri($appUri);
-    $appLinkInfo->setAppTarget($appTarget);
-    $appLink->setAndroidAppLindInfo($appLinkInfo);
+	$appImageUri = new Google_Service_Walletobjects_ImageUri();
+	$appImageUri->setUri('https://play-lh.googleusercontent.com/pfhnA3cO81kTHj-i0eTr4nrMctF0R0jFX3_EXyCrNI6UuHDqBmp_xJEZi5PLVByuUdk2=w480-h960');
+	$appImage = new Google_Service_Walletobjects_Image();
+	$appImage->setSourceUri($appImageUri);
+	$appContent = new Google_Service_Walletobjects_LocalizedString();
+	$appContentTranslated = new Google_Service_Walletobjects_TranslatedString();
+	$appContentTranslated->setLanguage("zh-TW");
+	$appContentTranslated->setValue("MOPCON App Icon");
+	$appContent->setDefaultValue($appContentTranslated);
+	$appImageUri->setDescription($appContent);
+	// $appLinkInfo->setAppLogoImage($appImage);
+	$appTitle = new Google_Service_Walletobjects_LocalizedString();
+	$appTitleTranslated = new Google_Service_Walletobjects_TranslatedString();
+	$appTitleTranslated->setLanguage("zh-TW");
+	$appTitleTranslated->setValue("MOPCON Android App");
+	$appTitle->setDefaultValue($appTitleTranslated);
+	// $appLinkInfo->setTitle($appTitle);
+	$appDescription = new Google_Service_Walletobjects_LocalizedString();
+	$appDescriptionTranslated = new Google_Service_Walletobjects_TranslatedString();
+	$appDescriptionTranslated->setLanguage("zh-TW");
+	$appDescriptionTranslated->setValue("MOPCON Android App 立馬下載！");
+	$appDescription->setDefaultValue($appDescriptionTranslated);
+	// $appLinkInfo->setDescription($appDescription);
+	$appTarget = new Google_Service_Walletobjects_AppLinkDataAppLinkInfoAppTarget();
+	$appUri = new Google_Service_Walletobjects_Uri();
+	$appUri->setUri('https://play.google.com/store/apps/details?id=org.mopcon.session.app');
+	$appUri->setDescription('Download on Google Play Store');
+	$appTarget->setTargetUri($appUri);
+	// $appLinkInfo->setAppTarget($appTarget);
+	// $appLinkData->setAndroidAppLinkInfo($appLinkInfo);
 
-    // Define eventticket object
-    $payload = new Google_Service_Walletobjects_EventTicketObject();
-    // required fields
-    $payload->setClassId($classId);
-    $payload->setId($objectId);
-    $payload->setState("active");
-    // optional.  Check design and reference api to decide what's desirable
-    $payload->setBarcode($barcode);
-    $payload->setTicketHolderName("王大明");
-    $payload->setTicketNumber("123abc");//訂單編號
-    $payload->setTicketType($ticketType);
-    $payload->setId("123abc");//訂單編號
-    $payload->setHexBackgroundColor('#206ff7');
-    $payload->setLocations([$locationPoint]);
-    $payload->setAppLinkData($appLink);
-
+	// Define eventticket object
+	$payload = new Google_Service_Walletobjects_EventTicketObject();
+	// required fields
+	$payload->setClassId($classId);
+	$payload->setId($objectId);
+	$payload->setState("active");
+	// optional.  Check design and reference api to decide what's desirable
+	$payload->setBarcode($barcode);
+	$payload->setTicketHolderName("王大明");
+	$payload->setTicketNumber("123abc");//訂單編號
+	$payload->setTicketType($ticketType);
+	$payload->setLocations([$locationPoint]);
+	// $payload->setAppLinkData($appLinkData);
 
     return $payload;
 }
