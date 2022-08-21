@@ -14,6 +14,6 @@
 "event_start_date" = "活動開始時間";
 "event_end_date" = "活動結束時間";
 "official_site" = "官方網站";
-"order_id" = "訂單編號";
+"ticket_no" = "票號";
 "city_title" = "高雄";
 "date_range" = "10/15 - 10/16";

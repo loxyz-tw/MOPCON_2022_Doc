@@ -7,7 +7,7 @@
 'passTypeIdentifier' => '',
 'associatedStoreIdentifiers' => 'app store id',
 'formatVersion' => 1,
-'backgroundColor' => 'rgb(15,20,29)',
+'backgroundColor' => 'rgb(0,116,162)',
 'labelColor' => 'rgb(255, 255, 255)',
 'foregroundColor' => 'rgb(255, 255, 255)',
 'logoText' => 'MOPCON 2022',
@@ -26,39 +26,42 @@
             'value' => 'date_range',
         ]],
     'primaryFields' => [
-        [
-            'key' => 'title',
-            'label' => 'event_title',
-            'value' => 'Mobile Open Platform Conference 2022',
-        ],        
-        
-    ],
-    'secondaryFields' => [
-        [
-            'key' => 'attendee',
-            'label' => 'attendee_title',
-            'value' => '王大明',
-        ],
-        [
-            'key' => 'ticket',
-            'label' => 'ticket_type_title',
-            'value' => 'ticket_type_normal',
-            'textAlignment' => 'PKTextAlignmentRight',
-        ],
-    ],
-    'auxiliaryFields' => [
-        [
-            'key' => 'place',
-            'label' => 'place_title',
-            'value' => 'place_name',
-        ],
-        [
-            'key' => 'date',
-            'label' => 'date_title',
-            'value' => '2022/10/15 - 2022/10/16',
-            'textAlignment' => 'PKTextAlignmentRight',
-        ],        
-    ],
+	],
+	'secondaryFields' => [
+		[
+			'key' => 'title',
+			'label' => 'event_title',
+			'value' => 'Mobile Open Platform Conference 2022',
+		],
+	],
+	'auxiliaryFields' => [
+		[
+			'key' => 'attendee',
+			'label' => 'attendee_title',
+			'value' => '王大明',
+			'row' => 0
+		],
+		[
+			'key' => 'ticket',
+			'label' => 'ticket_type_title',
+			'value' => 'ticket_type_normal',
+			'textAlignment' => 'PKTextAlignmentRight',
+			'row' => 0
+		],
+		[
+			'key' => 'place',
+			'label' => 'place_title',
+			'value' => 'place_name',
+			'row' => 1
+		],
+		[
+			'key' => 'date',
+			'label' => 'date_title',
+			'value' => '2022/10/15 - 2022/10/16',
+			'textAlignment' => 'PKTextAlignmentRight',
+			'row' => 1
+		],
+	],
     'backFields' => [  
         [
             'key' => 'event',
